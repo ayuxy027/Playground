@@ -1,0 +1,32 @@
+[
+  {
+    "icon": "src/assets/icons/alumini_icon1.png",
+    "value": "41Yrs",
+    "label": "Academic Excellence"
+  },
+  {
+    "icon": "src/assets/icons/alumini_icon2.png",
+    "value": "3 Cycles",
+    "label": "NAAC - Accredited"
+  },
+  {
+    "icon": "src/assets/icons/alumini_icon3.png",
+    "value": "90%+",
+    "label": "Campus Placements"
+  },
+  {
+    "icon": "src/assets/icons/alumini_icon4.png",
+    "value": "12000+",
+    "label": "Alumni Members"
+  },
+  {
+    "icon": "src/assets/icons/alumini_icon5.png",
+    "value": "Since 2005",
+    "label": "ISO 9001 Certified"
+  },
+  {
+    "icon": "src/assets/icons/alumini_icon6.png",
+    "value": "6 Cycles",
+    "label": "NBA Accredited"
+  }
+]
