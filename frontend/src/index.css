@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply font-jakarta tracking-tight;
+  }
+  
+  body {
+    @apply bg-vintage-snow text-vintage-black antialiased;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-vintage-pearl;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-vintage-silver rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-vintage-slate;
+  }
+}
+
+@layer components {
+  /* Button variants */
+  .btn {
+    @apply px-4 py-2 border transition-all duration-200 font-medium tracking-tight;
+  }
+  
+  .btn-outline {
+    @apply btn border-vintage-black text-vintage-black bg-transparent hover:bg-vintage-black hover:text-vintage-white;
+  }
+  
+  .btn-outline-secondary {
+    @apply btn border-vintage-slate text-vintage-slate bg-transparent hover:bg-vintage-slate hover:text-vintage-white;
+  }
+  
+  .btn-solid {
+    @apply btn bg-vintage-black text-vintage-white border-vintage-black hover:bg-vintage-charcoal;
+  }
+  
+  .btn-ghost {
+    @apply btn border-transparent text-vintage-slate hover:text-vintage-black hover:bg-vintage-pearl;
+  }
+  
+  /* Input styles */
+  .input {
+    @apply w-full px-3 py-2 border border-vintage-platinum bg-vintage-white text-vintage-black placeholder-vintage-silver focus:outline-none focus:border-vintage-black transition-colors duration-200;
+  }
+  
+  /* Card styles */
+  .card {
+    @apply bg-vintage-white border border-vintage-platinum shadow-vintage;
+  }
+  
+  .card-hover {
+    @apply card hover:shadow-vintage-lg transition-shadow duration-200;
+  }
+  
+  /* Loading states */
+  .loading {
+    @apply animate-pulse bg-vintage-pearl;
+  }
+  
+  /* Focus styles */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-vintage-slate focus:ring-offset-2 focus:ring-offset-vintage-snow;
+  }
+}
+
+@layer utilities {
+  /* Text utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  /* Grid utilities */
+  .grid-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  /* Backdrop utilities */
+  .backdrop-vintage {
+    backdrop-filter: blur(8px);
+    background-color: rgba(245, 245, 245, 0.8);
+  }
+} 

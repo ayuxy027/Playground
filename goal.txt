@@ -1,0 +1,67 @@
+Build a Personal Bookmark Manager with Google OAuth
+Objective: Create a web application where users can log in using their Google account,
+save, view, edit, and delete bookmarks for web pages. The app should use the MERN stack
+(MongoDB, Express.js, React, Node.js) and implement Google OAuth for user
+authentication. In this Project UI doesn’t matter use the same project of React Vite on a
+separate page build this
+Requirements:
+1. Backend (Node.js, Express.js, MongoDB):
+○
+Set up an Express.js server with RESTful API endpoints.
+○
+Use MongoDB to store bookmarks with the following fields:
+■ title (string, required, e.g., webpage title or user-defined name)
+■ url (string, required, must be a valid URL)
+■ category (string, optional, e.g.,
+"Work"
+"Personal"
+,
+,
+"Learning")
+■ userId (string, linked to the authenticated user's Google ID)
+■ createdAt (timestamp)
+○
+Implement the following API endpoints:
+■ POST /api/bookmarks: Create a new bookmark (authenticated users
+only).
+■ GET /api/bookmarks: Retrieve all bookmarks for the authenticated
+user.
+■ PUT /api/bookmarks/:id: Update a bookmark by ID (ensure the user
+owns it).
+■ DELETE /api/bookmarks/:id: Delete a bookmark by ID (ensure the
+user owns it).
+○
+Integrate Google OAuth 2.0 for authentication:
+■ Store the user's Google ID and email in MongoDB upon login.
+■ Issue a JWT token after successful Google login to secure API
+requests.
+○
+Protect API endpoints to ensure only authenticated users can access their
+bookmarks.
+2. Frontend (React):
+○
+Create a single-page application using React.
+○
+Implement a "Sign in with Google" button to initiate the OAuth flow.
+○
+Display a list of the authenticated user's bookmarks,
+○
+Provide a form to add a new bookmark
+○
+Allow users to edit or delete their bookmarks.
+○
+Show a loading state during API calls and handle errors (e.g., invalid URLs,
+unauthorized access).
+3. Integration:
+○
+Connect the React frontend to the Express.js backend using fetch or axios.
+○
+○
+Handle Google OAuth redirects: After login, redirect to the bookmark
+management interface.
+Store the JWT token in the frontend (e.g., localStorage or cookies) and
+include it in API requests.
+○
+4. Bonus :
+○
+Deploy the app to a platform like Render, Vercel,
