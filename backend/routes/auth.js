@@ -38,6 +38,15 @@ router.get('/google/callback',
 // Get current user
 router.get('/me', authenticateToken, (req, res) => {
   try {
+    console.log('=== /auth/me called ===');
+    console.log('User from middleware:', req.user ? 'Found' : 'Not found');
+    console.log('User ID:', req.user?._id);
+    console.log('User email:', req.user?.email);
+    
+    if (!req.user) {
+      return res.status(401).json({ message: 'User not found in request' });
+    }
+    
     res.json({
       user: {
         id: req.user._id,
@@ -48,7 +57,7 @@ router.get('/me', authenticateToken, (req, res) => {
     });
   } catch (error) {
     console.error('Get user error:', error);
-    res.status(500).json({ message: 'Failed to get user information' });
+    res.status(500).json({ message: 'Failed to get user information', error: error.message });
   }
 });
 

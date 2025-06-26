@@ -91,10 +91,17 @@ if (process.env.NODE_ENV === 'production') {
 
 // Global error handler
 app.use((err, req, res, next) => {
-  console.error(err.stack);
+  console.error('=== ERROR ===');
+  console.error('Time:', new Date().toISOString());
+  console.error('Request:', req.method, req.path);
+  console.error('Error:', err.message);
+  console.error('Stack:', err.stack);
+  console.error('=============');
+  
   res.status(500).json({
     message: 'Something went wrong!',
-    error: process.env.NODE_ENV === 'production' ? {} : err.message
+    error: process.env.NODE_ENV === 'production' ? { message: err.message } : err.message,
+    timestamp: new Date().toISOString()
   });
 });
 
