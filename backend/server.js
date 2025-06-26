@@ -71,6 +71,24 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+// Root endpoint for Render health checks
+app.get('/', (req, res) => {
+  res.status(200).json({
+    message: 'Personal Bookmark Manager API',
+    version: '1.0.0',
+    status: 'Running',
+    timestamp: new Date().toISOString()
+  });
+});
+
+// Production logging
+if (process.env.NODE_ENV === 'production') {
+  app.use((req, res, next) => {
+    console.log(`${new Date().toISOString()} - ${req.method} ${req.path} - IP: ${req.ip}`);
+    next();
+  });
+}
+
 // Global error handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
